@@ -2,17 +2,55 @@
 <head>
 <meta charset="UTF-8">
 <title>ShaMoji Decoder</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
 <script>
-var emojis = {"🇧🇬","🤕","↘️","🎺","🎶","😙","💃","😱","🎁","🥶","👏","🖕","💯","🍫","🌴","♦️","🍩","📵","▶️","🦖 ","🍟","🤪","😚","🍳","☕","🌏","🍮","🥚","🧀","🐫","🏈","🐘","🎈","🎨","😌","🍻","🙃"};
+var emojis = ["🇧🇬","🤕","↘️","🎺","🎶","😙","💃","😱","🎁","🥶","👏","🖕","💯","🍫","🌴","♦️","🍩","📵","▶️","🦖 ","🍟","🤪","😚","🍳","☕","🌏","🍮","🥚","🧀","🐫","🏈","🐘","🎈","🎨","😌","🍻","🙃"];
+
+$(document).ready(function(){
+
+	$("#btnEmoji").click(function(){
+		var emojiWord = "";
+		var textWord = $("#wordBox").val().toUpperCase();
+		for(i=0;i<textWord.length;i++)
+		{
+			if(isLetter(textWord[i]) != null)
+			{
+				emojiWord = emojiWord + emojis[(textWord[i].charCodeAt(0) - 65)];
+			
+			}
+			else if(!isNaN(textWord[i]))
+			{
+				emojiWord = emojiWord + emojis[(textWord[i].charCodeAt(0) - 22)];
+			}
+			else
+			{
+				emojiWord = emojiWord + " ";
+			}
+			
+		}
+		
+		$("#emojiBox").val(emojiWord);
+		
+	});
+
+});
+
+
+function isLetter(s)
+{
+  return s.match("^[a-zA-Z\(\)]+$");    
+}
 
 </script>
-
-Enter word: <input type="text" name="wordBox" /><br>
-<input type="button" value ="Sha Mo!" /><br>
-Emoji : <input type="text" name="emojiBox" /><br>
+ShaMoJi Decoder:<br>
+Enter word: <input type="text" id="wordBox" name="wordBox" size=50 /><br>
+<input type="button" id="btnEmoji" value ="Sha Mo!" /><br>
+Emoji : <input type="text" id="emojiBox" name="emojiBox" size=50/><br>
+<br>
+Developed by Daddy QT
 
 </body>
 </html>
