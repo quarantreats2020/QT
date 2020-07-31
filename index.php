@@ -36,7 +36,7 @@ switch(strtolower($message))
         $message_to_reply ="LOL!";
         break;
 	case "qt":
-		$message_to_reply = "You got the password ".$sender."!";
+		$message_to_reply = "You got the password tae ka!";
 		break;
     default:
         $message_to_reply ="QT Bot says : Inaaral ko pa yan! try haha, lol, hello or hi";
