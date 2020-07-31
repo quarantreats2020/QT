@@ -35,8 +35,11 @@ switch(strtolower($message))
 	case "haha":
         $message_to_reply ="LOL!";
         break;
+	case "qt":
+		$message_to_reply = "You got the password ".$sender."!";
+		break;
     default:
-        $message_to_reply ="Chadify Bot says : Inaaral ko pa yan! try haha, lol, hello or hi";
+        $message_to_reply ="QT Bot says : Inaaral ko pa yan! try haha, lol, hello or hi";
 }
 
 //API Url
