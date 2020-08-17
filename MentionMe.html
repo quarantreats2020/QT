@@ -3,13 +3,57 @@
 <title>MentionMe</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){$("#profileLink").change(function(){var n=$("#profileLink").val().toUpperCase(),e=n.search("&ID="),r=n.search("PROFILE_ID=");e>=0&&(e=(n=n.substring(e+4)).search("&"))>0&&(n=n.substring(0,e)),r>=0?(r=(n=n.substring(r+11)).search("&"))>0&&(n=n.substring(0,r)):n="",$("#mentionCode").val("@["+n+":0]")})});
+$(document).ready(function(){
+
+	$("#profileLink").change(function(){
+		var mentionCode = "";
+		var textWord = $("#profileLink").val().toUpperCase();
+		var pos = textWord.search("&ID=");
+		var pos2 = textWord.search("PROFILE_ID=");
+		if(pos>=0)
+		{
+			textWord = textWord.substring(pos+4);
+			console.log(textWord);
+			console.log(pos);
+			pos = textWord.search("&");
+			console.log(pos);
+			if(pos>0)
+			{
+				textWord = textWord.substring(0,pos);
+			}
+			console.log(textWord);
+		}
+		else if(pos2>=0)
+		{
+			textWord = textWord.substring(pos2+11);
+			pos2 = textWord.search("&");
+			if(pos2>0)
+			{
+				textWord = textWord.substring(0,pos2);
+			}
+		}
+		else
+		{
+			textWord = "";
+		}
+		
+		
+		
+		$("#mentionCode").val("@[" + textWord + ":0]");
+		
+	});
+
+});
+
+
+
+
 </script>
 
 
 </head>
 <body>
-Paste here the profile picture link (grab from your favorite browser like Chrome or Safari): <br>
+Paste here the profile picture link (grab from your favorite browser like Chrome or Safari) <br>
 <input type="text" id="profileLink" /><br>
 Voila! Mention code here: <br>
 <input type="text" id="mentionCode" />
